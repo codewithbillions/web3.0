@@ -1,0 +1,71 @@
+import React from "react";
+
+import {eth, metamusk} from '../assets'
+
+import logo from "./../assets/icedoge_logo.svg";
+
+
+
+const TxUpdate = () => (
+  <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer">
+   <div className="flex justify-center items-center flex-col mt-5">
+      <p className="text-white text-xlg text-center">Join The $ICEDOGE Presale Now</p>
+      <p className="text-white text-sm text-center font-medium mt-2"></p>
+    </div>
+    <div className="w-full flex sm:flex-row flex-col justify-between items-center my-4">
+    
+      <div className="flex flex-[0.5] justify-center items-center hover:animate-spin">
+        <img src={logo} alt="logo" className="w-32" />
+      </div>
+      <div id="roadmap"  className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
+      
+        <p className="text-white text-base text-center mx-2 cursor-pointer">Current Price: $0.0001</p>
+      </div>
+    
+      <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
+        <p className="text-white text-base text-center mx-2 cursor-pointer">Presale address:</p>
+        <p className="text-white text-base text-center mx-2 cursor-pointer">0xE12C6fc28b6c35Fca2361321Ff593949d8BB539B</p>
+      </div>
+
+     
+    </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-">
+        <div class="h-2.5 rounded-full bg-blue-300 w-2/5"></div>
+    </div>
+
+    <p className="text-white text-base text-center mx-2 cursor-pointer"> </p>
+
+     <div className="flex flex-[0.5] text-white text-base text-center">
+        
+      </div>
+          <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
+
+
+      <p className="text-white text-left text-xs">Amount Raised: $3,913,836 / $10,000,000</p>
+      
+      <p className="text-white text-right text-xs">Total Presale: 700B</p>
+    </div>
+
+    <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "/>
+    <p className="text-white text-xlg text-center">Powered By</p>
+      <div className="flex flex-1 m-2">
+    <img src={eth} alt="logo" className="w-32" />
+    <img src={metamusk} alt="logo" className="w-32" />
+    </div>
+    <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "/>
+  
+    
+
+    
+
+    <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
+
+
+      <p className="text-white text-left text-xs"></p>
+      
+      <p className="text-white text-right text-xs"></p>
+    </div>
+  </div>
+);
+
+export default TxUpdate;
