@@ -54,12 +54,20 @@ const Navbar = () => {
           onClick={() => setToggle(!toggle)}
         />
 
+
+
+        //mobile screen
+
+
+
         <div
           className={`${
             !toggle ? "hidden" : "flex"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          }  bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex justify-end items-start flex-1 flex-col">
+          <li  className=" font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4">Community</li>
+           
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
@@ -71,6 +79,12 @@ const Navbar = () => {
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
+            <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4" href='#' onClick={openPdf}>Whitepaper </li>
+        <li  className=" font-poppins font-medium cursor-pointer text-[16px]">NFT</li>
+            <Link to="/team">
+                <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4">Team</li>
+            </Link>
+         <li className="ml-3"><Web3Button /></li>
           </ul>
         </div>
       </div>

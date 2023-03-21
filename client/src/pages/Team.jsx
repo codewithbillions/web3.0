@@ -1,15 +1,22 @@
 
 import React from 'react';
 
-import { Navbar, Testimonials, Accordion, Footer } from '../components';
+import { Testimonials, Accordion, Mission, Footer } from '../components';
+import styles from "../style";
 
 
 const Team = () => {
     return (
-        <div>
-        <Accordion/>
+        <div className="bg-primary w-full overflow-hidden">
+        <div className={`bg-primary ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+        
         <Testimonials />
+        <Mission />
+        <Accordion/>
         <Footer />
+        </div>
+        </div>
         </div>
     );
 }
