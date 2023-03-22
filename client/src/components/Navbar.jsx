@@ -21,7 +21,7 @@ const Navbar = () => {
       <img src={logo} alt="icedoge" className="w-[266px] h-[62px] " />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1 ">
-        <li className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 " > Community </li>
+        <li className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10"><a href="https://twitter.com/icedogetoken">Community</a></li>
 
         {navLinks.map((nav, index) => (
           <li
@@ -50,23 +50,18 @@ const Navbar = () => {
         <img
           src={toggle ? close : menu}
           alt="menu"
-          className="w-[28px] h-[28px] object-contain"
+          className="w-[28px] h-[28px] object-contain ml-16"
           onClick={() => setToggle(!toggle)}
         />
 
-
-
         //mobile screen
-
-
-
         <div
           className={`${
             !toggle ? "hidden" : "flex"
-          }  bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          }  bg-black-gradient bg-gray-700 absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
-          <ul className="list-none flex justify-end items-start flex-1 flex-col">
-          <li  className=" font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4">Community</li>
+          <ul className="list-none flex justify-end items-start flex-1 flex-col ml-4">
+          <li  className=" font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4"><a href="https://twitter.com/icedogetoken">Community</a></li>
            
             {navLinks.map((nav, index) => (
               <li
@@ -79,10 +74,10 @@ const Navbar = () => {
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
-            <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4" href='#' onClick={openPdf}>Whitepaper </li>
-        <li  className=" font-poppins font-medium cursor-pointer text-[16px]">NFT</li>
+            <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4 mt-5" href='#' onClick={openPdf}>Whitepaper </li>
+        <li  className=" font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mr-0 mr-10">NFT</li>
             <Link to="/team">
-                <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4">Team</li>
+                <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4 mt-5">Team</li>
             </Link>
          <li className="ml-3"><Web3Button /></li>
           </ul>

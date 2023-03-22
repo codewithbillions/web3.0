@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ["Open Sans", "sans-serif"],
+      hero: ["Luckiest Guy", "cursive"],
       body: ["Open Sans", "sans-serif"],
     },
     extend: {

@@ -47,13 +47,10 @@ const TxUpdate = () => (
     </div>
 
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "/>
-    <p className="text-white text-xlg text-center">Powered By</p>
-      <div className="flex flex-1 m-2">
-    <img src={eth} alt="logo" className="w-32" />
-    <img src={metamusk} alt="logo" className="w-32" />
-    </div>
-    <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "/>
-  
+
+
+ 
+  // powered by
     
 
     
@@ -69,3 +66,12 @@ const TxUpdate = () => (
 );
 
 export default TxUpdate;
+
+
+
+  //  <p className="text-white text-xlg text-center">Powered By</p>
+  //     <div className="flex flex-1 m-2">
+  //   <img src={eth} alt="logo" className="w-32" />
+  //   <img src={metamusk} alt="logo" className="w-32" />
+  //   </div>
+  //   <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "/>

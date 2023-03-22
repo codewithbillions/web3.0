@@ -52,9 +52,6 @@ const Welcome = () => {
         <br />
         <Web3NetworkSwitch />
             </div>
-            
-            
-
           )}
 
           <div className="grid sm:grid-cols-3 grid-cols-2 w-full mt-10">
@@ -66,9 +63,9 @@ const Welcome = () => {
               Ethereum
             </div>
             <div className={`sm:rounded-bl-2xl ${companyCommonStyles}`}>
-              Web 3.0
+              NFT
             </div>
-            <div className={companyCommonStyles}>Low Fees</div>
+            <div className={companyCommonStyles}>Ice Swap</div>
             <div className={`rounded-br-2xl ${companyCommonStyles}`}>
               Blockchain
             </div>
