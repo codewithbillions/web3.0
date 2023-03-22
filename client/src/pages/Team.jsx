@@ -1,23 +1,28 @@
 
 import React from 'react';
 
-import { Testimonials, Accordion, Mission, Footer } from '../components';
+import { GoBack, Testimonials, Accordion, Footer } from '../components';
+import {Link} from "react-router-dom"
 import styles from "../style";
 
 
 const Team = () => {
     return (
-        <div className="bg-primary w-full overflow-hidden">
-        <div className={`bg-primary ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
-        
-        <Testimonials />
-        <Mission />
-        <Accordion/>
-        <Footer />
-        </div>
-        </div>
-        </div>
+            <div className="bg-primary w-full overflow-hidden">
+                <div className={`bg-primary ${styles.flexStart}`}>
+                    <div className={`${styles.boxWidth}`}>
+                        <div className={` ${styles.flexCenter}`}>
+                        <Link to="/">
+                            <GoBack />
+                        </Link>
+                        
+                        </div>
+                        <Testimonials />
+                        <Accordion/>
+                        <Footer />
+                    </div>
+                </div>
+            </div>
     );
 }
 

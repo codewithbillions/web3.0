@@ -11,18 +11,9 @@ const App = () => (
    
      <div className="min-h-screen">
     <div className="bg-primary w-full overflow-hidden">
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Navbar />
-      </div>
-     
-    </div>
-  
-      
-      
      <Routes>
       <Route path="/" element={<Home />}/>
-      <Route path="/team" element={<Team />}/>
+        <Route path="/team" element={<Team />}/>
       <Route path="*" element={<PageNotFound />} />
      </Routes>
     </div>

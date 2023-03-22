@@ -18,10 +18,12 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar static">
+    <Link to="/">
       <img src={logo} alt="icedoge" className="w-[266px] h-[62px] " />
+    </Link>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1 ">
-        <li className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10"><a href="https://twitter.com/icedogetoken">Community</a></li>
+        <li className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10"><a href="https://twitter.com/icedogetoken" target={"_blank"}>Community</a></li>
 
         {navLinks.map((nav, index) => (
           <li
@@ -54,7 +56,7 @@ const Navbar = () => {
           onClick={() => setToggle(!toggle)}
         />
 
-        //mobile screen
+       
         <div
           className={`${
             !toggle ? "hidden" : "flex"

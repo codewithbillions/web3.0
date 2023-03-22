@@ -16,8 +16,10 @@ import Testimonials from "./Testimonials";
 import Hero from "./Hero";
 import Mission from "./Mission";
 import Accordion from "./Accordion";
+import GoBack from "./GoBack";
 
 export {
+  GoBack,
   Accordion,
   Billing,
   CardDeal,
