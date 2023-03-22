@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
-// import { Web3Button,  Web3NetworkSwitch } from '@web3modal/react'
-// import transactions from './../components/Transactions'
-import { contractABI, contractAddress } from "../utils/constants";
 
+import { contractABI, contractAddress } from "../utils/constants";
 
 export const TransactionContext = React.createContext();
 
@@ -43,6 +41,8 @@ export const TransactionsProvider = ({ children }) => {
           keyword: transaction.keyword,
           amount: parseInt(transaction.amount._hex) / (10 ** 18)
         }));
+
+        console.log(structuredTransactions);
 
         setTransactions(structuredTransactions);
       } else {
@@ -86,24 +86,10 @@ export const TransactionsProvider = ({ children }) => {
     }
   };
 
-  // const connectWallet = async () => {
-  //   try {
-  //     if (!ethereum) return alert("Please install MetaMask.");
-
-  //     const accounts = await ethereum.request({ method: "eth_requestAccounts", });
-
-  //     setCurrentAccount(accounts[0]);
-  //     window.location.reload();
-  //   } catch (error) {
-  //     console.log(error);
-
-  //     throw new Error("No ethereum object");
-  //   }
-  // };
-
   const connectWallet = async () => {
     try {
-      
+      if (!ethereum) return alert("Please install MetaMask.");
+
       const accounts = await ethereum.request({ method: "eth_requestAccounts", });
 
       setCurrentAccount(accounts[0]);
@@ -114,10 +100,6 @@ export const TransactionsProvider = ({ children }) => {
       throw new Error("No ethereum object");
     }
   };
-
-
-
-  
 
   const sendTransaction = async () => {
     try {
@@ -167,13 +149,13 @@ export const TransactionsProvider = ({ children }) => {
     <TransactionContext.Provider
       value={{
         transactionCount,
+        connectWallet,
         transactions,
         currentAccount,
         isLoading,
         sendTransaction,
         handleChange,
         formData,
-        connectWallet
       }}
     >
       {children}
