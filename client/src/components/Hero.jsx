@@ -1,6 +1,7 @@
 import styles from "../style";
 import {  smalldog, dog3 } from "../assets";
 import {socialMedia } from "../constants";
+import { Web3Button } from '@web3modal/react'
 import GetStarted from "./GetStarted";
 
 const Hero = () => {
@@ -28,9 +29,14 @@ const Hero = () => {
         <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
           IS LIVE NOW
         </h1>
+        <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
+          <Web3Button/>
+        </h1>
+        
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
           A Decentralised meme token built for the community to transfer income into the DeFi ecosystem and safeguard a crucial component of the ecosystem.
         </p>
+        
 
         <div className="flex flex-row md:mt-4 mt-6 animate-bounce w-6 h-6">
         {socialMedia.map((social, index) => (
