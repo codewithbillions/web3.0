@@ -40,7 +40,7 @@ const TxUpdate = () => (
       </div>
     <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
       <p className="text-white text-left text-xs">Amount Raised: $3,913,836 / $10,000,000</p>
-      <p className="text-white text-right text-xs">Total Presale: 700B</p>
+      <p className="text-white text-right text-xs">200,000,000,000 tokens</p>
     </div>
 
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "/>

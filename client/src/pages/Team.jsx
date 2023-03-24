@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import { GoBack, Testimonials, Accordion, Footer } from '../components';
+import { GoBack, Testimonials, CardDeal, Accordion, Footer } from '../components';
 import {Link} from "react-router-dom"
 import styles from "../style";
 
@@ -18,6 +18,7 @@ const Team = () => {
                         
                         </div>
                         <Testimonials />
+                        <CardDeal />
                         <Accordion/>
                         <Footer />
                     </div>

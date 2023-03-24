@@ -81,7 +81,6 @@ const Navbar = () => {
             <Link to="/team">
                 <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4 mt-5">Team</li>
             </Link>
-         <li className="ml-3"><Web3Button /></li>
           </ul>
         </div>
       </div>

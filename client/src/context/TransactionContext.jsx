@@ -5,6 +5,10 @@ import { contractABI, contractAddress } from "../utils/constants";
 
 export const TransactionContext = React.createContext();
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
+
 const { ethereum } = window;
 
 const createEthereumContract = () => {
@@ -55,7 +59,7 @@ export const TransactionsProvider = ({ children }) => {
 
   const checkIfWalletIsConnect = async () => {
     try {
-      if (!ethereum) return alert("Please install MetaMask.");
+      if (!ethereum) return toast("Please install Any Ethereum Wallet.");
 
       const accounts = await ethereum.request({ method: "eth_accounts" });
 
@@ -88,7 +92,7 @@ export const TransactionsProvider = ({ children }) => {
 
   const connectWallet = async () => {
     try {
-      if (!ethereum) return alert("Please install MetaMask.");
+      if (!ethereum) return toast("Please install A Wallet.");
 
       const accounts = await ethereum.request({ method: "eth_requestAccounts", });
 

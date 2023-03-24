@@ -88,20 +88,26 @@ export const feedback = [
 ];
 
 export const stats = [
+    {
+    id: "stats-3",
+    title: " token will be sold via public pre-sale",
+    value: "70%",
+  },
   {
     id: "stats-1",
-    title: "Total Suply",
-    value: "1B",
+    title: "for Exchanges",
+    value: "20%",
   },
   {
     id: "stats-2",
-    title: "Presale Allocation",
-    value: "15%",
+    title: "marketing wallet",
+    value: "5%",
   },
-  {
-    id: "stats-3",
-    title: "Team Allocation",
-    value: "2.5%",
+
+   {
+    id: "stats-4",
+    title: " visibly held for charity.",
+    value: "5%",
   },
 ];
 

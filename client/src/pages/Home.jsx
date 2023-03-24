@@ -1,4 +1,5 @@
 import { Navbar,Welcome, Transactions, TxUpdate,  Billing, Business, CardDeal, Clients, CTA, Footer, Stats, Mission, Hero, Accordion } from "../components";
+
 import styles from "../style";
 
 const Home = () => (
@@ -8,6 +9,7 @@ const Home = () => (
                     <Navbar />
                 </div>
             </div>
+          
     <div className="bg-primary w-full overflow-hidden">
     <div className={`bg-primary ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
@@ -29,7 +31,7 @@ const Home = () => (
     <div className={`${styles.boxWidth}`}>
         
         <Billing />
-        <CardDeal />
+     
         <Mission/>
         <Clients />
         <CTA />
