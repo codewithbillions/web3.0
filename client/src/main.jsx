@@ -27,12 +27,12 @@ const wagmiClient = createClient({
   connectors: w3mConnectors({ version: 1, chains, projectId }),
   provider
 })
-// import SupportAdmin from './pages/SupportAdmin';
+import SupportAdmin from './pages/SupportAdmin';
 
 // 3. Configure modal ethereum client
 const ethereumClient = new EthereumClient(wagmiClient, chains)
 
-// const path = window.location.pathname
+ const path = window.location.pathname
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -41,7 +41,7 @@ root.render(
     <WagmiConfig client={wagmiClient}>
     <BrowserRouter>
        <TransactionsProvider> 
-          <App />
+          { path.indexOf('/support') === -1 ?  <App /> : <SupportAdmin /> }
         <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
        </TransactionsProvider>
       </BrowserRouter>
@@ -50,4 +50,3 @@ root.render(
 
 
 
-// { path.indexOf('/support') === -1 ?  <App /> : <SupportAdmin /> }

@@ -1,3 +1,4 @@
+import {smalldog} from './../../assets'
 export const styles = {
     chatWithMeButton: {
         cursor: 'pointer',
@@ -5,7 +6,7 @@ export const styles = {
         // Border
         borderRadius: '50%',
         // Background 
-        backgroundImage: `url(./../../../assets/smalldog.png)`, 
+        backgroundImage: `url(${smalldog})`, 
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: '84px',
@@ -104,3 +105,4 @@ export const styles = {
         backgroundColor: '#fff',
     }
 }
+

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { ChatEngineWrapper, Socket, ChatFeed } from "react-chat-engine";
+import { ChatEngineWrapper, Socket } from "react-chat-engine";
 
 const ChatEngine = props => {
     const [showChat, setShowChat] = useState(false)
@@ -34,7 +34,7 @@ const ChatEngine = props => {
                         userName={props.user.email}
                         userSecret={props.user.email}
                     />
-                    <ChatFeed activeChat={props.chat.id} />
+                    renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
                 </ChatEngineWrapper>
             }
         </div>

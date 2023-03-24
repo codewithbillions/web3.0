@@ -178,16 +178,7 @@ export const footerLinks = [
 ];
 
 export const socialMedia = [
-  {
-    id: "social-media-1",
-    icon: instagram,
-    link: "https://t.co/ueDF9WBnuO",
-  },
-  {
-    id: "social-media-2",
-    icon: discord,
-    link: "https://t.co/ueDF9WBnuO",
-  },
+
   {
     id: "social-media-3",
     icon: twitter,
@@ -219,3 +210,14 @@ export const clients = [
   },
 ];
 
+
+  // {
+  //   id: "social-media-1",
+  //   icon: instagram,
+  //   link: "https://t.co/ueDF9WBnuO",
+  // },
+  // {
+  //   id: "social-media-2",
+  //   icon: discord,
+  //   link: "https://t.co/ueDF9WBnuO",
+  // },
