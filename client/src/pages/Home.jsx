@@ -32,7 +32,7 @@ const Home = () => (
     <div className={`${styles.boxWidth}`}>
         
         <Billing />
-     
+      <CardDeal/>
         <Mission/>
         <Clients />
         <CTA />

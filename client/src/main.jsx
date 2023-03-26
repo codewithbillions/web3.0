@@ -37,15 +37,13 @@ const ethereumClient = new EthereumClient(wagmiClient, chains)
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 
-    
-    <WagmiConfig client={wagmiClient}>
     <BrowserRouter>
        <TransactionsProvider> 
           { path.indexOf('/support') === -1 ?  <App /> : <SupportAdmin /> }
         <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
        </TransactionsProvider>
       </BrowserRouter>
-      </WagmiConfig>
+  
 )
 
 

@@ -42,8 +42,8 @@ const Navbar = () => {
         ))}
         <li  className=" font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ml-10 " href='#' onClick={openPdf}>Whitepaper </li>
         <li  className=" font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ">NFT</li>
-            <Link to="/team">
-                <li  className="  font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ">Team</li>
+          <Link to="/team">
+               <li  className="  font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ">Team</li>
             </Link>
          <li className="ml-3"><Web3Button /></li>
       </ul>

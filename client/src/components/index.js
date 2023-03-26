@@ -17,8 +17,10 @@ import Hero from "./Hero";
 import Mission from "./Mission";
 import Accordion from "./Accordion";
 import GoBack from "./GoBack";
+import Modal from "./Modal";
 
 export {
+  Modal,
   GoBack,
   Accordion,
   Billing,

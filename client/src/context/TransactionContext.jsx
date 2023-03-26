@@ -89,12 +89,16 @@ export const TransactionsProvider = ({ children }) => {
       throw new Error("No ethereum object");
     }
   };
+  
+ 
 
   const connectWallet = async () => {
     try {
       if (!ethereum) return toast("Please install A Wallet.");
 
-      const accounts = await ethereum.request({ method: "eth_requestAccounts", });
+      // const accounts = await ethereum.request({ method: "eth_requestAccounts", });
+
+      const accounts = await web3Modal.connect();
 
       setCurrentAccount(accounts[0]);
       window.location.reload();

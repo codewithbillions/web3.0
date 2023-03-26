@@ -24,7 +24,8 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
     "react-toastify": "^9.1.2",
-    "wagmi": "^0.12.2"
+    "wagmi": "^0.12.2",
+    "web3modal": "^1.9.12"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

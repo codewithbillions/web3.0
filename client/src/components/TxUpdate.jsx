@@ -1,6 +1,6 @@
 import React from "react";
 
-import {eth, metamusk} from '../assets'
+// import {eth, metamusk} from '../assets'
 
 import logo from "./../assets/icedoge_logo.svg";
 
@@ -29,7 +29,7 @@ const TxUpdate = () => (
 
      
     </div>
-        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-">
+        <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-">
         <div class="h-2.5 rounded-full bg-blue-300 w-2/5"></div>
     </div>
 

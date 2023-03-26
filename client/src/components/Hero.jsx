@@ -1,10 +1,15 @@
 import styles from "../style";
-import {  smalldog, dog3 } from "../assets";
+import { useState } from 'react';
+import { smalldog, dog3 } from "../assets";
 import {socialMedia } from "../constants";
-import { Web3Button } from '@web3modal/react'
 import GetStarted from "./GetStarted";
+import { Modal } from "../components";
 
 const Hero = () => {
+
+   const [openConnect, setOpenConnect] = useState(false);
+   const handleOnClose = () => setOpenConnect(false)
+
   return (
     <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
       <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
@@ -30,7 +35,19 @@ const Hero = () => {
           IS LIVE NOW
         </h1>
         <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
-          <Web3Button/>
+          <div className=" bg-opacity-30">
+      <div className="max-w-3xl mx-auto ">
+        <div className="text-center py-3">
+       
+          <button className="   gradient-bg-services text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>
+           <img src={smalldog} alt="blurdog" className="w-[12px] h-[12px] animate-bounce w-6 h-6" />
+            BUY NOW
+          </button>
+        </div>
+   
+          <Modal onClose={handleOnClose} visible={openConnect} />  
+      </div>
+      </div>
         </h1>
         
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
