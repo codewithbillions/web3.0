@@ -1,9 +1,16 @@
+import { useState } from 'react';
 import styles from "../style";
 import Button from "./Button";
 import { icegod } from "../assets";
-import { Web3Button} from '@web3modal/react';
+import { Modal } from "../components";
 
-const CTA = () => (
+const CTA = () => {
+
+   const [openConnect, setOpenConnect] = useState(false);
+   const handleOnClose = () => setOpenConnect(false);
+
+  return (
+
   <section className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow`}>
     <div className="flex-1 flex flex-col">
     
@@ -13,12 +20,11 @@ const CTA = () => (
       
 
         <h2 className={styles.heading2}>Become an ice god today</h2>
-        <img className="w-[82px] h-[82px] animate-bounce w-6 h-6" src={icegod}/>
+        <img className="w-[82px] h-[82px] animate-bounce w-6 h-6 ml-28" src={icegod}/>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-       Connect your wallet
-      </p>
-      <Web3Button/>
-      
+    </p>
+        <button  className="rounded-full gradient-bg-services text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>BUY NOW</button>
+      <Modal onClose={handleOnClose} visible={openConnect} />
     </div>
     
 
@@ -28,8 +34,8 @@ const CTA = () => (
     </div>
   </section>
 
-    
+  )   
       
-);
+};
 
 export default CTA;

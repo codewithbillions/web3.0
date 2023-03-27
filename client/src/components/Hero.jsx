@@ -26,7 +26,7 @@ const Hero = () => {
            <span className="font-hero">ICEDOGE</span>  <br className="sm:block hidden" />{" "}
             <span className="text-gradient">PRESALE</span>{" "}
           </h1>
-          <div className="ss:flex hidden md:mr-4 mr-0 animate-bounce w-6 h-6">
+          <div className="ss:flex hidden md:mr-4 mr-0 w-6">
             <GetStarted />
           </div>
         </div>
@@ -37,13 +37,12 @@ const Hero = () => {
         <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full">
           <div className=" bg-opacity-30">
       <div className="max-w-3xl mx-auto ">
-        <div className="text-center py-3">
-       
-          <button className="   gradient-bg-services text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>
-           <img src={smalldog} alt="blurdog" className="w-[12px] h-[12px] animate-bounce w-6 h-6" />
+        <span className="text-center py-2">
+          <img src={smalldog} alt="blurdog" className="w-[18px] h-[18px] animate-bounce w-6 ml-60 " />
+          <button  className="rounded-full gradient-bg-services text-white px-5 py-4 rounded hover:scale-95 transition text-xl  ml-48" onClick={() => setOpenConnect(true)}>
             BUY NOW
           </button>
-        </div>
+        </span>
    
           <Modal onClose={handleOnClose} visible={openConnect} />  
       </div>

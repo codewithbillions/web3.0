@@ -12,16 +12,16 @@ const Business = () =>  (
       $ICEDOGE is a full-fledge community token designed specially to transfer income into the DeFi ecosystem. The token that users purchase will be split, and by design this will provide an upward price pressure for the token. This will allow us to keep developing the platform and provide a source of utility for tokens.
       </p>
        <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 mx-4 my-4"/>
-          <p className="text-white text-xlg text-center mx-4 my-4">Token Name: ICEDOGE</p>
+          <p className="text-white text-sm w-11/12 text-center mx-4 my-4">Token Name: ICEDOGE</p>
      <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-4 mx-4 my-4"/>
-    <p className="text-white text-xlg text-center mx-4 my-4">Blockchain: Ethereum</p>
+    <p className="text-white text-sm w-11/12 text-center mx-4 my-4">Blockchain: Ethereum</p>
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-4 mx-4 my-4"/>
-    <p className="text-white text-xlg text-center mx-4 my-4">Decimal: 18</p>
+    <p className="text-white text-sm w-11/12 text-center mx-4 my-4">Decimal: 18</p>
      <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-4 mx-4 my-4"/>
-    <p className="text-white text-xlg text-center mx-4 my-4">Token Contract Address:
+    <p className="text-white text-sm w-11/12 text-center ">Token Contract Address:
       0x6475a3628649f97t9f81259803802f2188770870</p>
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-4 mx-4 my-4"/>
-    <p className="text-white text-xlg text-center my-4 mx-4">Presale Contract Address: 
+    <p className="text-white text-sm w-11/12 text-center ">Presale Contract Address: 
       0x6475a3628649f97t9f81259803802f2188770870</p>
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 m-5 "/>
 

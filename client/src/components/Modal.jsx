@@ -12,7 +12,7 @@ export default function MyModal({visible, onClose}) {
     if (!visible) return null
 
   return (
-    <div id='container' onClick={handleOnClose} className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center">
+    <div id='container' onClick={handleOnClose} className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center pb-28">
       <div className="gradient-bg-services p-2 rounded w-72">
         <h1 className="font-semibold text-center text-xl text-gray-700">
           connect wallet

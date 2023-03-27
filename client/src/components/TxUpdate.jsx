@@ -23,8 +23,8 @@ const TxUpdate = () => (
       </div>
     
       <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
-        <p className="text-white text-base text-center mx-2 cursor-pointer">Presale address:</p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">0xE12C6fc28b6c35Fca2361321Ff593949d8BB539B</p>
+        <p className="text-white text-base text-center mx-2 cursor-pointer">Presale address:</p> <br/>
+        <p className="text-white text-sm w-11/12 text-center mx-2 cursor-pointer">0xE12C6fc28b6c35Fca2361321Ff593949d8BB539B</p>
       </div>
 
      
@@ -39,8 +39,8 @@ const TxUpdate = () => (
         
       </div>
     <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
-      <p className="text-white text-left text-xs">Amount Raised: $3,913,836 / $10,000,000</p>
-      <p className="text-white text-right text-xs">200,000,000,000 tokens</p>
+      <p className="text-white text-left text-sm w-11/12">Amount Raised: $3,913,836 / $10,000,000</p>
+      <p className="text-white text-right text-sm w-11/12">200,000,000,000 tokens</p>
     </div>
 
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "/>

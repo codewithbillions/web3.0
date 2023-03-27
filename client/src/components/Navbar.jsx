@@ -1,27 +1,27 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import logo from './../assets/icedoge_logo.svg'
-import { Web3Button } from '@web3modal/react'
 import { close, menu } from "../assets";
 import { navLinks } from "../constants";
 import whitepaper from './../../images/whitepaper.d2b3c95ad7a66debe360.pdf';
+import { Modal } from "../components";
  
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
- 
-
   const openPdf = () => {
         window.open(whitepaper, "_blank");
       }; 
 
-  return (
-    <nav className="w-full flex py-6 justify-between items-center navbar static">
-    <Link to="/">
-      <img src={logo} alt="icedoge" className="w-[266px] h-[62px] " />
-    </Link>
+   const [openConnect, setOpenConnect] = useState(false);
+   const handleOnClose = () => setOpenConnect(false)
 
+  return (
+    <nav className="w-full flex py-6 justify-between items-center navbar">
+      <Link to="/">
+        <img src={logo} alt="icedoge" className="w-[266px] h-[62px] " />
+      </Link>
       <ul className="list-none sm:flex hidden justify-end items-center flex-1 ">
         <li className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10"><a href="https://twitter.com/icedogetoken" target={"_blank"}>Community</a></li>
 
@@ -34,21 +34,25 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}  
           >
-            <a href={`#${nav.id}`} >{nav.title}</a>
-             
+            <a href={`#${nav.id}`} >{nav.title}</a>  
           </li>
-         
-        
         ))}
-        <li  className=" font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ml-10 " href='#' onClick={openPdf}>Whitepaper </li>
-        <li  className=" font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ">NFT</li>
+        <li  className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ml-10 " href='#' onClick={openPdf}><a>Whitepaper</a></li>
+
+        <li  className=" font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 "><a>NFT</a></li>
           <Link to="/team">
-               <li  className="  font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ">Team</li>
+               <li  className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 "><a>Team</a></li>
             </Link>
-         <li className="ml-3"><Web3Button /></li>
-      </ul>
+         
+          <button className="rounded-full gradient-bg-services text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>
+            BUY NOW
+          </button>
+          <Modal onClose={handleOnClose} visible={openConnect} />
+        </ul> 
+      
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
+
         <img
           src={toggle ? close : menu}
           alt="menu"
@@ -56,7 +60,6 @@ const Navbar = () => {
           onClick={() => setToggle(!toggle)}
         />
 
-       
         <div
           className={`${
             !toggle ? "hidden" : "flex"

@@ -12,7 +12,7 @@ import { BrowserRouter } from "react-router-dom";
 
 // 1. Get projectID at https://cloud.walletconnect.com
 const projectId = "080925ff734019202f8750b91ac5b373"
-//import.meta.env.VITE_APP_PROJECT_ID
+// const projectId = import.meta.env.VITE_APP_PROJECT_ID;
 
 if (!projectId) {
   throw new Error('You need to provide REACT_APP_PROJECT_ID env variable')
@@ -27,19 +27,19 @@ const wagmiClient = createClient({
   connectors: w3mConnectors({ version: 1, chains, projectId }),
   provider
 })
-import SupportAdmin from './pages/SupportAdmin';
+// import SupportAdmin from './pages/SupportAdmin';
 
 // 3. Configure modal ethereum client
 const ethereumClient = new EthereumClient(wagmiClient, chains)
 
- const path = window.location.pathname
+//  const path = window.location.pathname
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 
     <BrowserRouter>
        <TransactionsProvider> 
-          { path.indexOf('/support') === -1 ?  <App /> : <SupportAdmin /> }
+        <App /> 
         <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
        </TransactionsProvider>
       </BrowserRouter>
@@ -47,4 +47,6 @@ root.render(
 )
 
 
+
+ // { path.indexOf('/support') === -1 ?  <App /> : <SupportAdmin /> }
 
