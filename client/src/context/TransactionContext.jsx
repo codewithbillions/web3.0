@@ -166,6 +166,7 @@ export const TransactionsProvider = ({ children }) => {
         formData,
       }}
     >
+     <ToastContainer />
       {children}
     </TransactionContext.Provider>
   );

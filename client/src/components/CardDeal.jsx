@@ -4,6 +4,7 @@ import Button from "./Button";
 
 const CardDeal = () => (
   <section className={layout.section}>
+    <Button styles={`mt-10`} />
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
         Decentralised Exchange <br className="sm:block hidden" /> IceDoge Swap
@@ -12,7 +13,7 @@ const CardDeal = () => (
         There are over 1,500 different types of cryptocurrencies. $ICEDOGE provides an adaptive swap interface that allows users to exchange their tokens quickly using the website. For every active transaction, a $ICEDOGE reward is granted to holders’ decentralized wallets to foster a healthy community usage
       </p>
 
-      <Button styles={`mt-10`} />
+      
     </div>
 
     <div className={layout.sectionImg}>

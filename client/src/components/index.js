@@ -18,8 +18,13 @@ import Mission from "./Mission";
 import Accordion from "./Accordion";
 import GoBack from "./GoBack";
 import Modal from "./Modal";
+import NFTswipe from "./NFTswipe";
+import NFThero from "./NFThero";
+
 
 export {
+ NFTswipe,
+ NFThero,
   Modal,
   GoBack,
   Accordion,

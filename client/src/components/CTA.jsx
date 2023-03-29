@@ -23,7 +23,7 @@ const CTA = () => {
         <img className="w-[82px] h-[82px] animate-bounce w-6 h-6 ml-28" src={icegod}/>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
     </p>
-        <button  className="rounded-full gradient-bg-services text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>BUY NOW</button>
+        <button  className="rounded-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600  text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>BUY NOW</button>
       <Modal onClose={handleOnClose} visible={openConnect} />
     </div>
     

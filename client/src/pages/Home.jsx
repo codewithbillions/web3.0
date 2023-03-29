@@ -1,4 +1,4 @@
-import { Navbar,Welcome, Transactions, TxUpdate,  Billing, Business, CardDeal, Clients, CTA, Footer, Stats, Mission, Hero, Accordion } from "../components";
+import { Navbar,Welcome, TxUpdate,  Billing, Business, CardDeal, Clients, CTA, Footer, Stats, Mission, Hero, Accordion, NFThero } from "../components";
 
 
 import styles from "../style";
@@ -21,12 +21,12 @@ const Home = () => (
     <Business />
     <div className="gradient-bg-welcome">
       <Welcome />
-      <Transactions />
     </div>
     <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
     <div className={`${styles.boxWidth}`}> 
       <Billing />
       <CardDeal />
+      <NFThero/>
       <Mission />
       <Clients />
       <CTA />

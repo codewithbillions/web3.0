@@ -43,6 +43,10 @@ const Footer = () => (
       <p className="font-poppins font-normal text-center text-[16px] leading-[27px] text-white">
         Copyright Ⓒ 2023 ICEDOGE. All Rights Reserved.
       </p>
+       <p className="font-poppins font-normal text-center text-[16px] leading-[27px] text-white">
+        info@icedogetoken.com
+      </p>
+
 
       <div className="flex flex-row md:mt-0 mt-2 animate-bounce w-6 h-6 mx-32">
         {socialMedia.map((social, index) => (

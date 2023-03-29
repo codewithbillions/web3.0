@@ -24,8 +24,6 @@ const Mission = () => (
       <div className="flex-1 flex flex-col justify-start items-start">
         <h1 className="text-white text-3xl sm:text-5xl py-2 text-gradient ">
           Mission
-          <br />
-          <br/>
           <br/>
         </h1>
         <p className="text-left my-2 text-white font-light md:w-9/12 w-11/12 text-base">

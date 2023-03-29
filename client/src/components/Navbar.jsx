@@ -39,12 +39,12 @@ const Navbar = () => {
         ))}
         <li  className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 ml-10 " href='#' onClick={openPdf}><a>Whitepaper</a></li>
 
-        <li  className=" font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 "><a>NFT</a></li>
+        <li  className=" font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 "><a href="#nft">NFT</a></li>
           <Link to="/team">
                <li  className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 "><a>Team</a></li>
             </Link>
          
-          <button className="rounded-full gradient-bg-services text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>
+          <button className="rounded-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600  text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>
             BUY NOW
           </button>
           <Modal onClose={handleOnClose} visible={openConnect} />
@@ -80,7 +80,7 @@ const Navbar = () => {
               </li>
             ))}
             <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4 mt-5" href='#' onClick={openPdf}>Whitepaper </li>
-        <li  className=" font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mr-0 mr-10">NFT</li>
+        <li  className=" font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mr-0 mr-10"><a href="#nft">NFT</a></li>
             <Link to="/team">
                 <li  className="font-poppins font-medium cursor-pointer text-[16px] text-dimWhite mb-0 mb-4 mt-5">Team</li>
             </Link>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import CountdownTimer from './CountdownTimer/CountdownTimer'
 // import {eth, metamusk} from '../assets'
 
 import logo from "./../assets/icedoge_logo.svg";
@@ -9,8 +9,8 @@ import logo from "./../assets/icedoge_logo.svg";
 const TxUpdate = () => (
   <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer my-5 ">
    <div className="flex justify-center items-center flex-col mt-5">
-      <p className="text-white text-xlg text-center">Join The $ICEDOGE Presale Now</p>
-      <p className="text-white text-sm text-center font-medium mt-2"></p>
+      <h1 className="text-white text-xlg text-center">Join The $ICEDOGE Presale Now</h1>
+      <div className=" text-sm text-center font-medium mt-2 mx-4 my-4" ><CountdownTimer countdownTimestampMs={1682676257000} /></div>
     </div>
     <div className="w-full flex sm:flex-row flex-col justify-between items-center my-4">
     
@@ -29,8 +29,8 @@ const TxUpdate = () => (
 
      
     </div>
-        <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-">
-        <div class="h-2.5 rounded-full bg-blue-300 w-2/5"></div>
+        <div className=" w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-">
+        <div class="h-2.5 rounded-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600  w-2/5"></div>
     </div>
 
     <p className="text-white text-base text-center mx-2 cursor-pointer"> </p>
@@ -40,7 +40,7 @@ const TxUpdate = () => (
       </div>
     <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
       <p className="text-white text-left text-sm w-11/12">Amount Raised: $3,913,836 / $10,000,000</p>
-      <p className="text-white text-right text-sm w-11/12">200,000,000,000 tokens</p>
+      <p className="text-white text-right text-sm w-11/12">40,000,000,000 tokens</p>
     </div>
 
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 "/>

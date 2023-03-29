@@ -7,7 +7,9 @@ module.exports = {
     fontFamily: {
       display: ["Open Sans", "sans-serif"],
       hero: ["Luckiest Guy", "cursive"],
-      body: ["Open Sans", "sans-serif"],
+      // body: ["Open Sans", "sans-serif"],
+      timer: ["VT323", "monospace"],
+      body:["Roboto", "sans-serif"],
     },
     extend: {
       colors: {
