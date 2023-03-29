@@ -17,11 +17,12 @@ const Home = () => (
       </div>
     </div>
     <TxUpdate />
-    <Stats />
-    <Business />
     <div className="gradient-bg-welcome">
       <Welcome />
     </div>
+    <Stats />
+    <Business />
+    
     <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
     <div className={`${styles.boxWidth}`}> 
       <Billing />

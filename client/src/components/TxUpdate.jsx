@@ -10,7 +10,7 @@ const TxUpdate = () => (
   <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer my-5 ">
    <div className="flex justify-center items-center flex-col mt-5">
       <h1 className="text-white text-xlg text-center">Join The $ICEDOGE Presale Now</h1>
-      <div className=" text-sm text-center font-medium mt-2 mx-4 my-4" ><CountdownTimer countdownTimestampMs={1682676257000} /></div>
+      <div className=" text-sm text-center font-medium mt-2 mx-4 my-4 " ><CountdownTimer countdownTimestampMs={1682676257000} /></div>
     </div>
     <div className="w-full flex sm:flex-row flex-col justify-between items-center my-4">
     

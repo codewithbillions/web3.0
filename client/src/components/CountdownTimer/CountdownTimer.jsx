@@ -26,7 +26,7 @@ const CountdownTimer = ({countdownTimestampMs}) => {
     return(
         <div className='timer-VT323'>
         <p className='text-white timer-VT323'>presale stage 1</p>
-        <div className="countdown-timer timer-VT323">
+        <div className="countdown-timer timer-VT323 white-glassmorphism">
             <span>{remainingTime.days}</span>
             <span>days</span>
             <span className="two-numbers timer-VT323">{remainingTime.hours}</span>
