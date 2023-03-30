@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
+import {blurdog} from "./../assets"
 import { Web3Button,  Web3NetworkSwitch } from '@web3modal/react'
 
 import { TransactionContext } from "../context/TransactionContext";
@@ -95,6 +96,11 @@ const Welcome = () => {
             
             <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
             <div className="h-[1px] w-full bg-gray-400 my-2" />
+            <div className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism flex ml-24"> 
+            <img src={blurdog} alt="blurdog" className="w-[32px] h-[32px] ms-0" />
+            <span className="p-2" > You Receive {formData.amount * 10000} $IceDodge</span>
+            </div>
+            <div className="h-[1px] w-full bg-gray-400" />
 
             {isLoading
               ? <Loader />
