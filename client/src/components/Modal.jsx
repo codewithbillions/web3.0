@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { TransactionContext } from "./../context/TransactionContext"
+import { shortenAddress } from "../utils/shortenAddress";
 import { Loader } from "../components";
 import {blurdog} from "./../assets"
 
 import { Web3Button } from '@web3modal/react';
+
 
 
 const Input = ({ placeholder, name, type, value, handleChange }) => (
@@ -18,17 +20,18 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 );
 
 const MyModal = ({visible, onClose}) => {
-  const { currentAccount, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);  
+  const { currentAccount, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
+
   const handleSubmit = (e) => {
     const { addressTo, amount, } = formData;
        e.preventDefault();
 
-    if (!addressTo || !amount ) return;
+    if (!amount ) return;
 
     sendTransaction();
   };
 
-    const handleOnClose = (e) => {
+  const handleOnClose = (e) => {
         if(e.target.id === 'container')
         onClose();
     };
@@ -37,22 +40,23 @@ const MyModal = ({visible, onClose}) => {
 
   return (
     <div id="container" onClick={handleOnClose} className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center pb-28">
+    
     <div>
       <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
-        <h1 className=" text-center ">
-          connect wallet
+        <h1 className=" text-center text-white text-base">
+          CONNECT
         </h1>
         <div className="text-center text-gray-700 mb-5">
             <Web3Button/>
         </div>
         <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
-            
+
             <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
+
             <div className="h-[1px] w-full bg-gray-400 my-2" />
-            <div className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism flex ml-24"> 
-            <img src={blurdog} alt="blurdog" className="w-[32px] h-[32px] ms-0" />
-            <span className="p-2" > You Receive {formData.amount * 10000} $IceDodge</span>
-            </div>
+
+             <Input  src={blurdog} alt="blurdog" className="w-[32px] h-[32px] ms-0 cursor-not-allowed" placeholder={`$ICD ${formData.amount * 17857142.857}`} name="amount" type="number" />
+
             <div className="h-[1px] w-full bg-gray-400" />
 
             {isLoading
@@ -66,6 +70,10 @@ const MyModal = ({visible, onClose}) => {
                   Buy now
                 </button>
               )}
+              <div className="h-[1px] w-full bg-gray-400 mt-2 " />
+               <p className="text-white font-light text-sm pt-2">
+                  {shortenAddress(currentAccount)}
+                </p>
           </div>
       </div>
       </div>

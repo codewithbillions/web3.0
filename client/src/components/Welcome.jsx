@@ -7,7 +7,9 @@ import { Web3Button,  Web3NetworkSwitch } from '@web3modal/react'
 
 import { TransactionContext } from "../context/TransactionContext";
 import { shortenAddress } from "../utils/shortenAddress";
-import { Loader } from "../components";
+import { Loader } from ".";
+
+
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
@@ -25,16 +27,19 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 
 const Welcome = () => {
   const { currentAccount, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
+  
 
   const handleSubmit = (e) => {
     const { addressTo, amount, } = formData;
 
     e.preventDefault();
 
-    if (!addressTo || !amount ) return;
+    if (!amount ) return;
 
     sendTransaction();
   };
+
+
 
   return (
     <div className="flex w-full justify-center items-center">
@@ -48,10 +53,9 @@ const Welcome = () => {
             EXPLORE THE CRYPTO WORLD ON ICEDOGE NETWORK.
           </p>
           {!currentAccount && (<div>
-        
             <Web3Button />
-        <br />
-        <Web3NetworkSwitch />
+              <br />
+            <Web3NetworkSwitch />
             </div>
           )}
 
@@ -95,13 +99,13 @@ const Welcome = () => {
           <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
             
             <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
-            <div className="h-[1px] w-full bg-gray-400 my-2" />
-            <div className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism flex ml-24"> 
-            <img src={blurdog} alt="blurdog" className="w-[32px] h-[32px] ms-0" />
-            <span className="p-2" > You Receive {formData.amount * 10000} $IceDodge</span>
-            </div>
-            <div className="h-[1px] w-full bg-gray-400" />
 
+            <div className="h-[1px] w-full bg-gray-400 my-2" />
+
+             <Input  src={blurdog} alt="blurdog" className="w-[32px] h-[32px] ms-0 cursor-not-allowed" placeholder={`$ICD ${formData.amount * 17857142.857}`} name="amount" type="number" handleChange={handleChange} />
+             
+        
+                <div className="h-[1px] w-full bg-gray-400" />
             {isLoading
               ? <Loader />
               : (
@@ -113,6 +117,10 @@ const Welcome = () => {
                   Buy now
                 </button>
               )}
+             <div className="h-[1px] w-full bg-gray-400 mt-2 " />
+               <p className="text-white font-light text-sm pt-2">
+                  {shortenAddress(currentAccount)}
+                </p>
           </div>
         </div>
       </div>
@@ -120,4 +128,23 @@ const Welcome = () => {
   );
 };
 
+
+
 export default Welcome;
+
+
+// import useBalance from '../actions/useBalance'
+      //   const [balance] = useBalance(
+  //   selectedToken.address,
+  //   selectedToken.decimals
+  // )
+
+    // const [selectedToken, setSelectedToken] = useState(TokenListRinkeby[0])
+
+    // <div className="h-[1px] w-full bg-gray-400" />
+    //           <select onChange={(e) => setSelectedToken(TokenListRinkeby[e.target.value])}>
+    //           {TokenListRinkeby.map((token, index) => (
+    //             <option value={index} key={token.address}>{token.name}</option>
+    //           ))}
+    //         </select>
+    //         {selectedToken.name} balance {balance}

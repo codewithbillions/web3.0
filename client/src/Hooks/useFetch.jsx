@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-const APIKEY = "Jo9iJNDSqWpytc8lq54PC7SlowmZuanG"
-// const APIKEY = import.meta.env.VITE_GIPHY_API;
+const APIKEY = import.meta.env.VITE_GIPHY_API;
 
 const useFetch = ({ keyword }) => {
   const [gifUrl, setGifUrl] = useState("");

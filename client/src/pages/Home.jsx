@@ -1,4 +1,4 @@
-import { Navbar,Welcome, TxUpdate,  Billing, Business, CardDeal, Clients, CTA, Footer, Stats, Mission, Hero, Accordion, NFThero } from "../components";
+import { Navbar, Welcome, TxUpdate,  Billing, Business, CardDeal, Clients, CTA, Footer, Stats, Mission, Hero, Accordion, NFThero } from "../components";
 
 
 import styles from "../style";
@@ -19,6 +19,7 @@ const Home = () => (
     <TxUpdate />
     <div className="gradient-bg-welcome">
       <Welcome />
+
     </div>
     <Stats />
     <Business />

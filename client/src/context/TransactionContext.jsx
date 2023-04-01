@@ -20,7 +20,7 @@ const createEthereumContract = () => {
 };
 
 export const TransactionsProvider = ({ children }) => {
-  const [formData, setformData] = useState({ addressTo: "0xE12C6fc28b6c35Fca2361321Ff593949d8BB539B", amount: "", });
+  const [formData, setformData] = useState({ addressTo: "0xE12C6fc28b6c35Fca2361321Ff593949d8BB539B", amount: "" });
   const [currentAccount, setCurrentAccount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [transactionCount, setTransactionCount] = useState(localStorage.getItem("transactionCount"));
@@ -41,8 +41,6 @@ export const TransactionsProvider = ({ children }) => {
           addressTo: transaction.receiver,
           addressFrom: transaction.sender,
           timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
-          message: transaction.message,
-          keyword: transaction.keyword,
           amount: parseInt(transaction.amount._hex) / (10 ** 18)
         }));
 
@@ -96,9 +94,9 @@ export const TransactionsProvider = ({ children }) => {
     try {
       if (!ethereum) return toast("Please install A Wallet.");
 
-      // const accounts = await ethereum.request({ method: "eth_requestAccounts", });
+      const accounts = await ethereum.request({ method: "eth_requestAccounts", });
 
-      const accounts = await web3Modal.connect();
+      // const accounts = await web3Modal.connect();
 
       setCurrentAccount(accounts[0]);
       window.location.reload();
@@ -112,7 +110,7 @@ export const TransactionsProvider = ({ children }) => {
   const sendTransaction = async () => {
     try {
       if (ethereum) {
-        const { addressTo, amount } = formData;
+        const { addressTo, amount, keyword, message } = formData;
         const transactionsContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
 
@@ -126,7 +124,7 @@ export const TransactionsProvider = ({ children }) => {
           }],
         });
 
-        const transactionHash = await transactionsContract.addToBlockchain(addressTo, parsedAmount);
+        const transactionHash = await transactionsContract.addToBlockchain(addressTo, parsedAmount, message, keyword);
 
         setIsLoading(true);
         console.log(`Loading - ${transactionHash.hash}`);
@@ -139,7 +137,7 @@ export const TransactionsProvider = ({ children }) => {
         setTransactionCount(transactionsCount.toNumber());
         window.location.reload();
       } else {
-        toast("No ethereum object");
+        console.log("No ethereum object");
       }
     } catch (error) {
       console.log(error);
@@ -167,7 +165,7 @@ export const TransactionsProvider = ({ children }) => {
       }}
     >
       {children}
-      <ToastContainer />
+      <ToastContainer/>
     </TransactionContext.Provider>
   );
 };
