@@ -44,7 +44,6 @@ export const TransactionsProvider = ({ children }) => {
           amount: parseInt(transaction.amount._hex) / (10 ** 18)
         }));
 
-        console.log(structuredTransactions);
 
         setTransactions(structuredTransactions);
       } else {
@@ -110,7 +109,7 @@ export const TransactionsProvider = ({ children }) => {
   const sendTransaction = async () => {
     try {
       if (ethereum) {
-        const { addressTo, amount, keyword, message } = formData;
+        const { addressTo, amount } = formData;
         const transactionsContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
 
@@ -124,12 +123,12 @@ export const TransactionsProvider = ({ children }) => {
           }],
         });
 
-        const transactionHash = await transactionsContract.addToBlockchain(addressTo, parsedAmount, message, keyword);
+        const transactionHash = await transactionsContract.addToBlockchain(addressTo, parsedAmount);
 
         setIsLoading(true);
-        console.log(`Loading - ${transactionHash.hash}`);
+        toast(`Loading - ${transactionHash.hash}`);
         await transactionHash.wait();
-        console.log(`Success - ${transactionHash.hash}`);
+        toast(`Success - ${transactionHash.hash}`);
         setIsLoading(false);
 
         const transactionsCount = await transactionsContract.getTransactionCount();
@@ -137,7 +136,7 @@ export const TransactionsProvider = ({ children }) => {
         setTransactionCount(transactionsCount.toNumber());
         window.location.reload();
       } else {
-        console.log("No ethereum object");
+        toast("please! use browser in dapp wallet for transactions");
       }
     } catch (error) {
       console.log(error);
@@ -165,7 +164,8 @@ export const TransactionsProvider = ({ children }) => {
       }}
     >
       {children}
-      <ToastContainer/>
+    <ToastContainer/>
     </TransactionContext.Provider>
   );
 };
+

@@ -17,21 +17,21 @@ const Home = () => (
       </div>
     </div>
     <TxUpdate />
-    <div className="gradient-bg-welcome">
-      <Welcome />
-
-    </div>
-    <Stats />
+    //  <div className="gradient-bg-welcome">
+//       <Welcome />
+//     </div>
     <Business />
     
     <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
     <div className={`${styles.boxWidth}`}> 
       <Billing />
       <CardDeal />
+      
       <NFThero/>
       <Mission />
       <Clients />
       <CTA />
+      <Stats />
       <Accordion />
       <Footer />
       </div>

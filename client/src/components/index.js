@@ -20,9 +20,11 @@ import GoBack from "./GoBack";
 import Modal from "./Modal";
 import NFTswipe from "./NFTswipe";
 import NFThero from "./NFThero";
+import Exchange from "./Exchange";
 
 
 export {
+  Exchange,
  NFTswipe,
  NFThero,
   Modal,

@@ -4,6 +4,8 @@ import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 import {blurdog} from "./../assets"
 import { Web3Button,  Web3NetworkSwitch } from '@web3modal/react'
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { TransactionContext } from "../context/TransactionContext";
 import { shortenAddress } from "../utils/shortenAddress";
@@ -30,11 +32,13 @@ const Welcome = () => {
   
 
   const handleSubmit = (e) => {
-    const { addressTo, amount, } = formData;
+    const { amount } = formData;
 
     e.preventDefault();
 
-    if (!amount ) return;
+    if (!amount ) {
+      toast("please enter amount (ETH)") 
+      return}
 
     sendTransaction();
   };
@@ -53,7 +57,7 @@ const Welcome = () => {
             EXPLORE THE CRYPTO WORLD ON ICEDOGE NETWORK.
           </p>
           {!currentAccount && (<div>
-            <Web3Button />
+            <Web3Button icon="show" label="Connect Wallet" balance="show" className="text-white" />
               <br />
             <Web3NetworkSwitch />
             </div>
@@ -100,9 +104,9 @@ const Welcome = () => {
             
             <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
 
-            <div className="h-[1px] w-full bg-gray-400 my-2" />
+            <div className="h-[1px] w-full bg-gray-400 my-2 disabled-input"/>
 
-             <Input  src={blurdog} alt="blurdog" className="w-[32px] h-[32px] ms-0 cursor-not-allowed" placeholder={`$ICD ${formData.amount * 17857142.857}`} name="amount" type="number" handleChange={handleChange} />
+             <Input  src={blurdog} alt="blurdog" className="w-[32px] h-[32px] ms-0 cursor-not-allowed" placeholder={`$ICD ${formData.amount * 17857142.857}`} type="number" />
              
         
                 <div className="h-[1px] w-full bg-gray-400" />

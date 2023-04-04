@@ -39,10 +39,11 @@ const Hero = () => {
       <div className="max-w-3xl mx-auto ">
         <span className="text-center py-2">
           <img src={smalldog} alt="blurdog" className="w-[18px] h-[18px] animate-bounce w-6 ml-60 " />
-          <button  className="rounded-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-white px-5 py-4 rounded hover:scale-95 transition text-xl  ml-48" onClick={() => setOpenConnect(true)}>
+         
+        </span>
+            <button  className="rounded-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-white px-5 py-4 rounded hover:scale-95 transition text-xl  ml-48" onClick={() => setOpenConnect(true)}>
             BUY NOW
           </button>
-        </span>
    
           <Modal onClose={handleOnClose} visible={openConnect} />  
       </div>
@@ -85,8 +86,10 @@ const Hero = () => {
       <div className={`ss:hidden ${styles.flexCenter}`}>
         <GetStarted />
       </div>
-    </section>
-  );
+    </section>)
 };
 
 export default Hero;
+
+
+

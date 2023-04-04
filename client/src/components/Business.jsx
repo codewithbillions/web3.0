@@ -4,7 +4,8 @@ import Button from "./Button";
 
 const Business = () =>  (
   <section id="features" className={layout.section}>
-    <div className={`${layout.sectionInfo} mx-5`} >
+ 
+    <div >
       <h2 className={`${styles.heading2} ml-10` }>
          Tokenomics
       </h2>
@@ -33,6 +34,7 @@ const Business = () =>  (
         <FeatureCard key={feature.id} {...feature} index={index} />
       ))}
     </div>
+    
   </section>
 );
 

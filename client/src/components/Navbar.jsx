@@ -43,11 +43,11 @@ const Navbar = () => {
           <Link to="/team">
                <li  className="font-poppins font-normal cursor-pointer text-[16px] text-dimWhite mr-0 mr-10 "><a>Team</a></li>
             </Link>
-         
           <button className="rounded-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600  text-white px-5 py-4 rounded hover:scale-95 transition text-xl" onClick={() => setOpenConnect(true)}>
             BUY NOW
           </button>
           <Modal onClose={handleOnClose} visible={openConnect} />
+         
         </ul> 
       
 
@@ -92,3 +92,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
