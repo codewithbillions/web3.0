@@ -1,11 +1,13 @@
 {
+  "homepage": "http://codewithbillions/github.io/web3.0",
   "name": "ice_doge",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://icedogetoken.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "vite build",
     "preview": "vite preview"
   },
