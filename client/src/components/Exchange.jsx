@@ -6,15 +6,14 @@ import { ethers } from 'ethers';
 // import ethIcon from './ethicon.png';
 // import iceIcon from './iceIcon.png';
 import { useSendTransaction, useEtherBalance, Mainnet, useEthers } from '@usedapp/core';
-//import { getDefaultProvider } from 'ethers'
-import { getDatabase, ref, update, onValue } from "firebase/database";
+// import { getDatabase, ref, update, onValue } from "firebase/database";
 import { formatEther } from '@ethersproject/units'
 
 
 const Exchange = () => {
-  // const database = getDatabase();
-  // const dbRef = ref(getDatabase());
-  const db = getDatabase();
+  // // const database = getDatabase();
+  // // const dbRef = ref(getDatabase());
+  // const db = getDatabase();
   const {account, switchNetwork, chainId } = useEthers();
   // const { ens } = useLookupAddress();
   const weiToFloat = (weiAmount) => {
@@ -201,22 +200,22 @@ useEffect(() => {
     });
   }
  
-    const current_icebalance = 0;
-    const user_balancesout = ref(db, 'user_balances');
+    // const current_icebalance = 0;
+    // const user_balancesout = ref(db, 'user_balances');
 
-    useEffect(() => {
-      setIceBalance("Loading...")
-      const unsubscribe = onValue(user_balancesout, (snapshot) => {
-        let accountString = account.toString().toLowerCase()
-        const user_balancesout = snapshot.val();
-        console.log(user_balancesout[accountString]);
-        setIceBalance(user_balancesout[accountString]);
-      });
+    // useEffect(() => {
+    //   setIceBalance("Loading...")
+    //   const unsubscribe = onValue(user_balancesout, (snapshot) => {
+    //     let accountString = account.toString().toLowerCase()
+    //     const user_balancesout = snapshot.val();
+    //     console.log(user_balancesout[accountString]);
+    //     setIceBalance(user_balancesout[accountString]);
+    //   });
       
-      return () => {
-        unsubscribe();
-      }
-    },  [account]);
+    //   return () => {
+    //     unsubscribe();
+    //   }
+    // },  [account]);
 
   return (
     <>

@@ -101,15 +101,13 @@ const Welcome = () => {
             </div>
           </div>
           <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
-            
             <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
 
             <div className="h-[1px] w-full bg-gray-400 my-2 disabled-input"/>
 
-             <Input  src={blurdog} alt="blurdog" className="w-[32px] h-[32px] ms-0 cursor-not-allowed" placeholder={`$ICD ${formData.amount * 17857142.857}`} type="number" />
-             
+             <Input className="w-[32px] h-[32px] ms-0 cursor-not-allowed" placeholder={`$ICD ${formData.amount * 17857142.857}`} type="number" />
         
-                <div className="h-[1px] w-full bg-gray-400" />
+        <div className="h-[1px] w-full bg-gray-400" />
             {isLoading
               ? <Loader />
               : (

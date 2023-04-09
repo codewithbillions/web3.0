@@ -4,19 +4,34 @@ import React from "react";
 // import { RiHeart2Fill } from "react-icons/ri";
 import {  bigdogfull } from "../assets";
 
-// const ServiceCard = ({ color, title, icon, subtitle }) => (
-//   <div className="flex flex-row justify-start items-start white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl">
-//     <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
-//       {icon}
-//     </div>
-//     <div className="ml-5 flex flex-col flex-1">
-//       <h3 className="mt-2 text-white text-lg">{title}</h3>
-//       <p className="mt-1 text-white text-sm md:w-9/12">
-//         {subtitle}
-//       </p>
-//     </div>
-//   </div>
-// );
+
+const connectToWallet = async () => {
+  // Check if the browser has web3 (Mist/MetaMask) injected
+  if (typeof window.ethereum !== 'undefined') {
+    try {
+      // Request account access if needed
+      await window.ethereum.enable();
+
+      // Create a new web3 instance
+      const web3 = new Web3(window.ethereum);
+
+      // Get the current account from the wallet
+      const accounts = await web3.eth.getAccounts();
+      const currentAccount = accounts[0];
+
+      console.log('Connected to wallet:', currentAccount);
+
+      // Return the current account
+      return currentAccount;
+    } catch (error) {
+      // User denied account access
+      console.error('User denied account access:', error);
+    }
+  } else {
+    // No web3 provider detected
+    console.error('No web3 provider detected');
+  }
+};
 
 const Mission = () => (
   <div id="mission" className="flex w-full justify-center items-center gradient-bg-services">

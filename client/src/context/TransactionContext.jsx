@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
+import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import { contractABI, contractAddress } from "../utils/constants";
 
@@ -10,9 +11,13 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const { ethereum } = window;
+const addressTo = "0xE12C6fc28b6c35Fca2361321Ff593949d8BB539B"
 
 const createEthereumContract = () => {
-  const provider = new ethers.providers.Web3Provider(ethereum);
+ const provider = new ethers.providers.Web3Provider(new WalletConnectProvider({
+    infuraId: 'a347fa255b62416d88fb3365d634a7a6',
+  })
+);
   const signer = provider.getSigner();
   const transactionsContract = new ethers.Contract(contractAddress, contractABI, signer);
 
@@ -20,7 +25,7 @@ const createEthereumContract = () => {
 };
 
 export const TransactionsProvider = ({ children }) => {
-  const [formData, setformData] = useState({ addressTo: "0xE12C6fc28b6c35Fca2361321Ff593949d8BB539B", amount: "" });
+  const [formData, setformData] = useState({  amount: "" });
   const [currentAccount, setCurrentAccount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [transactionCount, setTransactionCount] = useState(localStorage.getItem("transactionCount"));
@@ -29,7 +34,7 @@ export const TransactionsProvider = ({ children }) => {
   const handleChange = (e, name) => {
     setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
   };
-
+  
   const getAllTransactions = async () => {
     try {
       if (ethereum) {
@@ -47,7 +52,7 @@ export const TransactionsProvider = ({ children }) => {
 
         setTransactions(structuredTransactions);
       } else {
-        console.log("Ethereum is not present");
+        toast("unable to fetch transactions");
       }
     } catch (error) {
       console.log(error);
@@ -65,7 +70,7 @@ export const TransactionsProvider = ({ children }) => {
 
         getAllTransactions();
       } else {
-        console.log("No accounts found");
+        toast("No accounts found");
       }
     } catch (error) {
       console.log(error);
@@ -82,8 +87,6 @@ export const TransactionsProvider = ({ children }) => {
       }
     } catch (error) {
       console.log(error);
-
-      throw new Error("No ethereum object");
     }
   };
   
@@ -91,7 +94,7 @@ export const TransactionsProvider = ({ children }) => {
 
   const connectWallet = async () => {
     try {
-      if (!ethereum) return toast("Please install A Wallet.");
+      if (!ethereum) return toast("Please connect a wallet.");
 
       const accounts = await ethereum.request({ method: "eth_requestAccounts", });
 
@@ -100,7 +103,7 @@ export const TransactionsProvider = ({ children }) => {
       setCurrentAccount(accounts[0]);
       window.location.reload();
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
 
       throw new Error("No ethereum object");
     }
@@ -109,7 +112,7 @@ export const TransactionsProvider = ({ children }) => {
   const sendTransaction = async () => {
     try {
       if (ethereum) {
-        const { addressTo, amount } = formData;
+        const { amount } = formData;
         const transactionsContract = createEthereumContract();
         const parsedAmount = ethers.utils.parseEther(amount);
 
@@ -136,12 +139,10 @@ export const TransactionsProvider = ({ children }) => {
         setTransactionCount(transactionsCount.toNumber());
         window.location.reload();
       } else {
-        toast("please! use browser in dapp wallet for transactions");
+        toast("Something went wrong! try again!!");
       }
     } catch (error) {
       console.log(error);
-
-      throw new Error("No ethereum object");
     }
   };
 
@@ -161,6 +162,7 @@ export const TransactionsProvider = ({ children }) => {
         sendTransaction,
         handleChange,
         formData,
+        getAllTransactions
       }}
     >
       {children}

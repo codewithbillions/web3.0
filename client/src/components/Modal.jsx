@@ -5,7 +5,6 @@ import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Loader } from "../components";
 import {blurdog} from "./../assets"
-
 import { Web3Button } from '@web3modal/react';
 
 
@@ -23,7 +22,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 );
 
 const MyModal = ({visible, onClose}) => {
-  const { currentAccount, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
+  const { currentAccount, handleChange, sendTransaction, formData, isLoading, error } = useContext(TransactionContext);
   const [disable, setDisable] = useState(true);
 
   const handleSubmit = (e) => {
@@ -44,8 +43,6 @@ const MyModal = ({visible, onClose}) => {
 
     if (!visible) return null
   
-
-
 
   return (
     <div id="container" onClick={handleOnClose} className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center pb-28">
@@ -80,12 +77,16 @@ const MyModal = ({visible, onClose}) => {
                 </button>
               )}
               <div className="h-[1px] w-full bg-gray-400 mt-2 " />
-               <p className="text-white font-light text-sm pt-2">
+               <div className="text-white font-light text-sm pt-2">
                   {shortenAddress(currentAccount)}
-                </p>
+                </div>
+              
+
           </div>
       </div>
+  
       </div>
+     
       
     </div>
   );
