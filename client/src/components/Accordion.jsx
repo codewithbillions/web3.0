@@ -13,7 +13,7 @@ const Accordion1 = () => {
   };
  
   return (
-    <Fragment className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4">
+    <Fragment>
       <Accordion className="text-white text-3xl sm:text-5xl py-2 text-gradient "  open={open === 0} disabled>
         <AccordionHeader>
          FAQ
