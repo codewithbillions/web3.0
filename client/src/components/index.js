@@ -20,15 +20,13 @@ import GoBack from "./GoBack";
 import Modal from "./Modal";
 import NFTswipe from "./NFTswipe";
 import NFThero from "./NFThero";
-import Exchange from "./Exchange";
 import CryptoSend from "./CryptoSend";
 
 
 export {
   CryptoSend,
-  Exchange,
- NFTswipe,
- NFThero,
+  NFTswipe,
+  NFThero,
   Modal,
   GoBack,
   Accordion,
